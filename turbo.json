@@ -13,6 +13,18 @@
     "check-types": {
       "dependsOn": ["^check-types"]
     },
+    "format": {
+      "dependsOn": [],
+      "inputs": ["$TURBO_DEFAULT$"],
+      "cache": true,
+      "outputs": []
+    },
+    "format:check": {
+      "dependsOn": [],
+      "inputs": ["$TURBO_DEFAULT$"],
+      "cache": true,
+      "outputs": []
+    },
     "dev": {
       "cache": false,
       "persistent": true

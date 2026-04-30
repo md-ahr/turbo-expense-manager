@@ -1,0 +1,26 @@
+{
+  "name": "@repo/tailwind-config",
+  "version": "0.0.0",
+  "type": "module",
+  "private": true,
+  "prettier": "@repo/prettier-config",
+  "scripts": {
+    "format": "prettier --write . --ignore-path ../../.prettierignore",
+    "format:check": "prettier --check . --ignore-path ../../.prettierignore"
+  },
+  "exports": {
+    ".": "./preset.css",
+    "./preset": "./preset.css",
+    "./theme": "./theme.css",
+    "./postcss": "./postcss.config.js"
+  },
+  "dependencies": {
+    "@tailwindcss/postcss": "^4.2.4",
+    "postcss": "^8.5.12",
+    "tailwindcss": "^4.2.4"
+  },
+  "devDependencies": {
+    "@repo/prettier-config": "workspace:*",
+    "prettier": "^3.8.3"
+  }
+}

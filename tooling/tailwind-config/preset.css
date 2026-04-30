@@ -1,0 +1,8 @@
+@import "tailwindcss";
+@import "./theme.css";
+
+body {
+  button {
+    @apply cursor-pointer;
+  }
+}

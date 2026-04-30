@@ -1,0 +1,6 @@
+/* Shared `@theme` tokens; use via `@repo/tailwind-config` preset or import this path after `tailwindcss`. */
+@theme {
+  --color-primary: #2a8af6;
+  --color-secondary: #a853ba;
+  --color-tertiary: #e92a67;
+}

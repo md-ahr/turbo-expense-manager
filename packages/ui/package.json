@@ -1,26 +1,41 @@
 {
   "name": "@repo/ui",
   "version": "0.0.0",
+  "type": "module",
   "private": true,
   "exports": {
-    "./*": "./src/*.tsx"
+    "./cn": {
+      "types": "./dist/cn.d.ts",
+      "default": "./dist/cn.js"
+    },
+    "./styles.css": "./dist/index.css",
+    "./*": "./dist/*.js"
   },
   "scripts": {
-    "lint": "eslint . --max-warnings 0",
-    "generate:component": "turbo gen react-component",
-    "check-types": "tsc --noEmit"
-  },
-  "devDependencies": {
-    "@repo/eslint-config": "workspace:*",
-    "@repo/typescript-config": "workspace:*",
-    "@types/node": "^22.15.3",
-    "@types/react": "19.2.2",
-    "@types/react-dom": "19.2.2",
-    "eslint": "^9.39.1",
-    "typescript": "5.9.2"
+    "format": "prettier --write . --ignore-path ../../.prettierignore",
+    "format:check": "prettier --check . --ignore-path ../../.prettierignore",
+    "build:styles": "tailwindcss -i ./src/styles.css -o ./dist/index.css",
+    "build:components": "tsc",
+    "dev:styles": "tailwindcss -i ./src/styles.css -o ./dist/index.css --watch",
+    "dev:components": "tsc --watch"
   },
   "dependencies": {
+    "clsx": "^2.1.1",
+    "tailwind-merge": "^3.3.1"
+  },
+  "devDependencies": {
+    "@repo/prettier-config": "workspace:*",
+    "@repo/tailwind-config": "workspace:*",
+    "@types/react": "19.2.2",
+    "@tailwindcss/cli": "^4.2.4",
+    "@tailwindcss/postcss": "^4.2.4",
+    "autoprefixer": "^10.5.0",
     "react": "^19.2.0",
-    "react-dom": "^19.2.0"
+    "tailwindcss": "^4.2.4",
+    "typescript": "5.9.2",
+    "prettier": "^3.8.3"
+  },
+  "peerDependencies": {
+    "react": "^19.2.0"
   }
 }

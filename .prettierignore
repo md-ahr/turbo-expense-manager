@@ -1,0 +1,14 @@
+node_modules
+.pnpm-store
+.pnp
+.pnp.js
+.next
+out
+build
+dist
+coverage
+.turbo
+.vercel
+.cache
+pnpm-lock.yaml
+.git

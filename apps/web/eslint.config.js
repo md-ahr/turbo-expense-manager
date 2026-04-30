@@ -1,4 +1,16 @@
-import { nextJsConfig } from "@repo/eslint-config/next-js";
+import { dirname } from "node:path";
+import { fileURLToPath } from "node:url";
+import { FlatCompat } from "@eslint/eslintrc";
 
-/** @type {import("eslint").Linter.Config[]} */
-export default nextJsConfig;
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+
+const compat = new FlatCompat({
+  baseDirectory: __dirname,
+});
+
+const eslintConfig = [
+  ...compat.extends("@repo/eslint-config/nextjs", "next/typescript"),
+];
+
+export default eslintConfig;

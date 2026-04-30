@@ -1,0 +1,4 @@
+@import "@repo/tailwind-config";
+
+/* UI package Tailwind builds: scan this package only */
+@source "./**/*.{ts,tsx}";
